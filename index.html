@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Second Task</title>
+	<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+	<div class="btn">
+		<a href="#" class="btn-filter">Фильтр</a>
+		<a href="#" class="btn-clear-filter">Очистить фильтр</a>
+	</div>
+	<div id="id01"></div>
+	<div class="filter-popup">
+		<h1 class="f-pop-header">Параметры фильтрации:</h1>
+		<form action="" method="get">
+			<div class="f-pop-f-bl">
+				<span class="f-pop-f-bl-name">Цвет:</span>
+				<ul>
+					<li>
+						<label>
+							<span>Красный:</span>
+							<input type="checkbox" name="color" value="Красный">
+						</label>
+					</li>
+					<li>
+						<label>
+							<span>Зелёный:</span>
+							<input type="checkbox" name="color" value="Зелёный">
+						</label>
+					</li>
+					<li>
+						<label>
+							<span>Фиолетовый:</span>
+							<input type="checkbox" name="color" value="Фиолетовый">
+						</label>
+					</li>
+					<li>
+						<label>
+							<span>Синий:</span>
+							<input type="checkbox" name="color" value="Синий">
+						</label>
+					</li>
+					<li>
+						<label>
+							<span>Жёлтый:</span>
+							<input type="checkbox" name="color" value="Жёлтый">
+						</label>
+					</li>
+					<li>
+						<label>
+							<span>Серый:</span>
+							<input type="checkbox" name="color" value="Серый">
+						</label>
+					</li>
+					<li>
+						<label>
+							<span>Чёрный:</span>
+							<input type="checkbox" name="color" value="Чёрный">
+						</label>
+					</li>
+					<li>
+						<label>
+							<span>Белый:</span>
+							<input type="checkbox" name="color" value="Белый">
+						</label>
+					</li>
+				</ul>
+			</div>
+			<div class="f-pop-f-bl">
+				<span class="f-pop-f-bl-name">Вид:</span>
+				<ul>
+					<li>
+						<label>
+							<span>Единорог:</span>
+							<input type="checkbox" name="kind" value="Единорог">
+						</label>
+					</li>
+					<li>
+						<label>
+							<span>Лошадь:</span>
+							<input type="checkbox" name="kind" value="Лошадь">
+						</label>
+					</li>
+				</ul>
+			</div>
+			<div class="f-pop-f-bl">
+				<span class="f-pop-f-bl-name">Цена: </span>
+				<br>
+				<label class="f-pop-f-bl-inp">
+					<span>От: </span>
+					<input type="text" name="from"/>
+				</label>
+				<label class="f-pop-f-bl-inp">
+					<span>До: </span>
+					<input type="text" name="to"/>
+				</label>
+			</div>
+			<div class="f-pop-f-bl">
+				<span class="f-pop-f-bl-name">Новинка: </span>
+				<br>
+				<label>
+					<span>Да </span>
+					<input type="checkbox" name="is_new" value="true"/>
+				</label> 
+				<label>
+					<span>Нет </span>
+					<input type="checkbox" name="is_new" value="false"/>
+				</label>
+			</div>
+			
+			<div>
+				<input type="submit" class="f-pop-f-bl-subm" value="Отфильтровать" name="send"/>
+			</div>
+		</form>
+		<a href="#" class="close-popup"></a>
+	</div>
+	<script src="jquery.js"></script>
+	<script src="store.js"></script>
+	<script src="main.js"></script>
+</body>
+</html>
