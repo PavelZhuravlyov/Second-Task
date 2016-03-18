@@ -31,16 +31,29 @@ $(document).ready(function(){
 	})();
 
 	(function(){
+		$(document).on('click', '.f-pop-f-bl-subm', function(){
+			var fromNumber = parseInt($(this).closest('form').find('input[name="from"]').val());
+			var toNumber = $(this).closest('form').find('input[name="to"]').val();
+			var reg = /[a-z][A-Z]/;
+			console.log(fromNumber.search(reg));
+			return false;
+		});
+	})();
+
+	(function(){
 		var list = ponyList.pony;
 		var filter = parseUrl(decodeURI(document.location.search));
 		
-		(!filter) ? document.getElementById('id01').innerHTML = outPut(list, outRand(list.length-1)) : document.getElementById('id01').innerHTML = printGoodsFilter(list, renderFilter(list, filter));
+		(!filter) ? document.getElementById('id01').innerHTML = outPut(list, outRand(list.length-1)) : document.getElementById('id01').innerHTML =  printGoodsFilter(list, renderFilter(list, filter));
 	})();
 
 	function printGoodsFilter(list, arrNumbers){
 		var stringGoods = '';
-		for(var i=0; i<arrNumbers.length; i++){
-			stringGoods += "<div class=\"item\"><p>Название: " + list[arrNumbers[i]].name + "</p><p>Цвет: " + list[arrNumbers[i]].color + "</p><p>Вид: " + list[arrNumbers[i]].kind + "</p><p>Цена: " + list[arrNumbers[i]].price + "</p><p>Новый товар: " + list[arrNumbers[i]].is_new + "</p></div>";
+		if(arrNumbers.length == 0) stringGoods = "Извините, такого товара нет в наличии";
+		else {
+			for(var i=0; i<arrNumbers.length; i++){
+				stringGoods += "<div class=\"item\"><p>Название: " + list[arrNumbers[i]].name + "</p><p>Цвет: " + list[arrNumbers[i]].color + "</p><p>Вид: " + list[arrNumbers[i]].kind + "</p><p>Цена: " + list[arrNumbers[i]].price + "</p><p>Новый товар: " + list[arrNumbers[i]].is_new + "</p></div>";
+			}
 		}
 		return stringGoods;
 	}
